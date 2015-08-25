@@ -45,7 +45,7 @@ int main(){
 
 	cl::CommandQueue queue(context,devices[0]);
 
-	cv::Mat image = cv::imread("/home/opencv-3.0.0/data/detect_blob.png",-1);
+	cv::Mat image = cv::imread("./detect_blob.png",-1);
 
 	if(!image.data){
 

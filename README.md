@@ -14,3 +14,8 @@ rotate image use opencl and opencv
 * OS: Ubuntu-based x64 15.04
 * Compiler: G++ 4.9.2
 * GPU and driver: NVIDIA driver version 346
+
+###Source and Result
+***
+![Result](https://raw.githubusercontent.com/swt02026/rotate_image_opencl_opencv/master/result.png)
+
