@@ -13,7 +13,7 @@ string sourceStr = BOOST_COMPUTE_STRINGIZE_SOURCE(
 
 		__kernel void img_rotate(
 				__global int* dst,
-				__read_only int* src,
+				__global int* src,
 				int W, int H,
 				int D,
 				float sinTheta,float cosTheta){
