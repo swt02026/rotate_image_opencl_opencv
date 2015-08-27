@@ -1,6 +1,6 @@
 # rotate_image_opencl_opencv
 
-rotate image use opencl and opencv
+rotate image use boost.compute and opencl c++ wrapper with opencv
 
 ###Used Library
 ***
