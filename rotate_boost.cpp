@@ -8,12 +8,13 @@ string sourceStr = BOOST_COMPUTE_STRINGIZE_SOURCE(
 		__kernel void img_rotate(
 				__global int* dst,
 				__global int* src,
-				int W, int H,
 				int D,
 				float sinTheta,float cosTheta){
 
 			int x = get_global_id(0);
 			int y = get_global_id(1);
+			int W = get_global_size(0);
+			int H = get_global_size(1);
 			float xpos = x * cosTheta + y * sinTheta;
 			float ypos = -1. * x * sinTheta + y * cosTheta + (W /2. );
 			if(xpos >= 0 && xpos < D && 
@@ -60,11 +61,9 @@ int main(){
 
 	kernel.set_arg(0, out_gpu_vec);
 	kernel.set_arg(1, in_gpu_vec);
-	kernel.set_arg(2, image.cols);
-	kernel.set_arg(3, image.rows);
-	kernel.set_arg(4, diagonal);
-	kernel.set_arg(5, (cl_float)cos(45));
-	kernel.set_arg(6, (cl_float)sin(45));
+	kernel.set_arg(2, diagonal);
+	kernel.set_arg(3, (cl_float)cos(45));
+	kernel.set_arg(4, (cl_float)sin(45));
 
 	const size_t global_size[2]={(unsigned)image.cols,(unsigned)image.rows};
 
