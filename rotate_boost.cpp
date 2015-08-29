@@ -42,7 +42,7 @@ int main(){
 	auto program = 
 			boost::compute::program::build_with_source(sourceStr.c_str(),context);
 
-	boost::compute::kernel kernel(program,"img_rotate");
+	auto kernel = program.create_kernel("img_rotate");
 
 	boost::compute::vector<cl_uint> in_gpu_vec(
 					in,
